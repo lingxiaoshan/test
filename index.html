@@ -60,6 +60,51 @@
         transform: translate(0, calc(100vh - 50px));
       }
     }
+
+    .falling-container {
+      position: relative;
+      height: 150px;
+      overflow: hidden;
+    }
+    
+    .falling-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50%;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+    }
+    
+    .falling-rose {
+      font-size: 50px;
+    }
+    
+    .falling-text {
+      font-size: 24px;
+      color: red;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translate(0, -50px);
+      }
+      100% {
+        transform: translate(0, calc(100vh - 50px));
+      }
+    }
+
+    .delay-1 {
+      animation-delay: 0s;
+    }
+    
+    .delay-2 {
+      animation-delay: 5s;
+    }
+    
+    .delay-3 {
+      animation-delay: 10s;
+    }
   </style>
   <title>旺锅的魅力</title>
 </head>
@@ -74,11 +119,26 @@
   
   <p>如果世界上还有好男人的话，那个人一定是旺锅！！！</p>
 
+  <div class="falling-container">
+    <div class="falling-row delay-1">
+      <span class="falling-rose">🌹</span>
+      <span class="falling-rose">🌹</span>
+      <span class="falling-rose">🌹</span>
+    </div>
+    <div class="falling-row delay-2">
+      <span class="falling-rose">🌹</span>
+      <span class="falling-rose">🌹</span>
+      <span class="falling-rose">🌹</span>
+    </div>
+    <div class="falling-row delay-3">
+      <span class="falling-text">威总，眼镜姐，新婚快乐！永远幸福</span>
+    </div>
+  </div>
+
 <script src="https://res.ilayuis.com/layui/dist/layui.js"></script>
   <script>
 const rows = document.querySelectorAll('.falling-row');
-const roseDelay = 8 * 1000; // 8 seconds
-const textDelay = 16 * 1000; // 16 seconds
+const roseDelay = 5 * 1000; // 5 seconds
 
 function createRose() {
   const rose = document.createElement('span');
@@ -87,27 +147,23 @@ function createRose() {
   return rose;
 }
 
-function createText() {
-  const text = document.createElement('span');
-  text.classList.add('falling-text');
-  text.innerHTML = '威总，眼镜姐，新婚快乐！永远幸福';
-  return text;
-}
-
 function startAnimation() {
   for (let i = 0; i < rows.length; i++) {
     const row = rows[i];
+    const rose1 = createRose();
+    const rose2 = createRose();
+    const rose3 = createRose();
+    row.appendChild(rose1);
+    row.appendChild(rose2);
+    row.appendChild(rose3);
     row.style.animationName = 'fall';
-    const rose = createRose();
-    const text = createText();
-    row.appendChild(rose);
-    row.appendChild(text);
     setTimeout(() => {
-      row.removeChild(rose);
-      row.removeChild(text);
-    }, textDelay);
+      row.removeChild(rose1);
+      row.removeChild(rose2);
+      row.removeChild(rose3);
+    }, roseDelay);
   }
-  setTimeout(startAnimation, textDelay);
+  setTimeout(startAnimation, roseDelay);
 }
 
 setTimeout(startAnimation, 100);
