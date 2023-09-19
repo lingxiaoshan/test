@@ -9,6 +9,7 @@
       color: #fff;
       font-family: Arial, sans-serif;
       text-align: center;
+      overflow: hidden;
     }
 
     h1 {
@@ -21,12 +22,13 @@
     }
 
     .falling-container {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 9999;
     }
 
     .falling-row {
@@ -65,7 +67,7 @@
       }
     }
   </style>
-  <title>旺锅</title>
+  <title>玫瑰花和祝福</title>
 </head>
 <body>
   <h1>旺锅</h1>
@@ -108,6 +110,6 @@
 
     startFalling();
     setInterval(startFalling, 15000);
-  </script>
+    </script>
 </body>
 </html>
