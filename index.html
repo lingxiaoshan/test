@@ -5,169 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background-color: #333;
+      background-color: #000;
       color: #fff;
       font-family: Arial, sans-serif;
       text-align: center;
     }
-    
-    h1 {
-      font-size: 24px;
-      padding: 20px;
-      background-color: #ff4d4d;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      margin: 40px auto;
-      max-width: 600px;
-    }
-    
-    p {
-      font-size: 18px;
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
 
-    .falling-rose {
-      position: absolute;
-      top: -50px;
-      font-size: 50px;
-      animation-duration: 5s;
-      animation-timing-function: linear;
-      z-index: 1;
-    }
-    
-    .falling-text {
-      position: absolute;
-      top: -50px;
-      font-size: 24px;
-      color: red;
-      z-index: 1;
-    }
-    
-    .delay-rose {
-      animation-delay: 0s;
-    }
-    
-    .delay-text {
-      animation-delay: 8s;
-    }
-    
-    @keyframes fall {
-      0% {
-        transform: translate(0, -50px);
-      }
-      100% {
-        transform: translate(0, calc(100vh - 50px));
-      }
+    h1 {
+      font-size: 48px;
+      color: #ff4d4d;
     }
 
     .falling-container {
       position: relative;
-      height: 150px;
+      height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
       overflow: hidden;
     }
-    
+
     .falling-row {
       display: flex;
       align-items: center;
-      justify-content: center;
-      height: 50%;
-      animation-duration: 5s;
-      animation-timing-function: linear;
+      animation: fall 2s infinite linear;
     }
-    
+
     .falling-rose {
-      font-size: 50px;
+      font-size: 60px;
+      animation: rotate 4s infinite linear;
     }
-    
+
     .falling-text {
       font-size: 24px;
-      color: red;
+      color: #ff4d4d;
     }
 
     @keyframes fall {
       0% {
-        transform: translate(0, -50px);
+        transform: translateY(-100%);
       }
       100% {
-        transform: translate(0, calc(100vh - 50px));
+        transform: translateY(100%);
       }
     }
 
-    .delay-1 {
-      animation-delay: 0s;
-    }
-    
-    .delay-2 {
-      animation-delay: 5s;
-    }
-    
-    .delay-3 {
-      animation-delay: 10s;
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
   </style>
   <title>旺锅</title>
 </head>
 <body>
-   <div class="falling-container">
-    <div class="falling-row delay-1">
+  <h1>旺锅</h1>
+  <div class="content">
+    <p>旺锅，作为一位杰出的动漫设计师，在专业能力、人品和为人处世方面都展现出卓越的魅力，绝对是妹子们的不二选择！</p>
+    <p>首先，旺锅在动漫设计领域拥有极高的专业水平。他精通各种绘画和设计技巧，熟悉动漫行业的发展趋势，能够创作出独具一格、令人惊叹的作品。他的创意和才华让人眼前一亮，能够为大众带来全新的视觉享受。无论是人物形象的塑造、色彩运用还是故事情节的构建，旺锅都能够恰到好处地表达出他的想法与感受，让人为之倾倒。</p>
+    <p>除了专业能力，旺锅在人品和为人处事方面都展现出了极大的魅力。他谦逊而有亲和力，乐于倾听他人的观点和建议。他对待工作认真负责，兢兢业业，不断追求进步和突破。他与他人相处融洽，善于与团队合作，能够和同事们建立起良好的沟通和合作关系。这种细腻而真挚的人品和处事态度，无疑是大家的榜样。</p>
+    <p>如果世界上还有好男人的话，那个人一定是旺锅！！！</p>
+  </div>
+  <div class="falling-container">
+    <div class="falling-row">
       <span class="falling-rose">🌹</span>
       <span class="falling-rose">🌹</span>
       <span class="falling-rose">🌹</span>
     </div>
-    <div class="falling-row delay-2">
-      <span class="falling-rose">🌹</span>
-      <span class="falling-rose">🌹</span>
-      <span class="falling-rose">🌹</span>
-    </div>
-    <div class="falling-row delay-3">
-      <span class="falling-text">威总，眼镜姐，新婚快乐！永远幸福</span>
+    <div class="falling-row">
+      <p class="falling-text">威总，眼镜姐，新婚快乐！永远幸福</p>
     </div>
   </div>
-  
-  <h1>旺锅</h1>
-  
-  <p>旺锅，作为一位杰出的动漫设计师，在专业能力、人品和为人处世方面都展现出卓越的魅力，绝对是妹子们的不二选择！</p>
-  
-  <p>首先，旺锅在动漫设计领域拥有极高的专业水平。他精通各种绘画和设计技巧，熟悉动漫行业的发展趋势，能够创作出独具一格、令人惊叹的作品。他的创意和才华让人眼前一亮，能够为大众带来全新的视觉享受。无论是人物形象的塑造、色彩运用还是故事情节的构建，旺锅都能够恰到好处地表达出他的想法与感受，让人为之倾倒。</p>
-
-  <p>除了专业能力，旺锅在人品和为人处事方面都展现出了极大的魅力。他谦逊而有亲和力，乐于倾听他人的观点和建议。他对待工作认真负责，兢兢业业，不断追求进步和突破。他与他人相处融洽，善于与团队合作，能够和同事们建立起良好的沟通和合作关系。这种细腻而真挚的人品和处事态度，无疑是大家的榜样。</p>
-  
-  <p>如果世界上还有好男人的话，那个人一定是旺锅！！！</p>
-
 <script src="https://res.ilayuis.com/layui/dist/layui.js"></script>
   <script>
-const rows = document.querySelectorAll('.falling-row');
-const roseDelay = 5 * 1000; // 5 seconds
+    const fallingContainer = document.querySelector('.falling-container');
+    const fallingRow = document.querySelectorAll('.falling-row');
 
-function createRose() {
-  const rose = document.createElement('span');
-  rose.classList.add('falling-rose');
-  rose.innerHTML = '🌹';
-  return rose;
-}
+    function resetAnimation() {
+      fallingRow.forEach(row => {
+        row.style.animationPlayState = 'paused';
+        void row.offsetWidth; // 强制触发重绘
+        row.style.animationPlayState = '';
+      });
+    }
 
-function startAnimation() {
-  for (let i = 0; i < rows.length; i++) {
-    const row = rows[i];
-    const rose1 = createRose();
-    const rose2 = createRose();
-    const rose3 = createRose();
-    row.appendChild(rose1);
-    row.appendChild(rose2);
-    row.appendChild(rose3);
-    row.style.animationName = 'fall';
-    setTimeout(() => {
-      row.removeChild(rose1);
-      row.removeChild(rose2);
-      row.removeChild(rose3);
-    }, roseDelay);
-  }
-  setTimeout(startAnimation, roseDelay);
-}
+    function startFalling() {
+      resetAnimation();
+      fallingRow.forEach((row, index) => {
+        row.style.animationDelay = `${index * 5}s`;
+      });
+      fallingContainer.classList.add('falling-start');
+    }
 
-setTimeout(startAnimation, 100);
-
+    startFalling();
+    setInterval(startFalling, 15000);
   </script>
 </body>
 </html>
