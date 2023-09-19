@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +14,12 @@
     
     h1 {
       font-size: 24px;
+      padding: 20px;
+      background-color: #ff4d4d;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      margin: 40px auto;
+      max-width: 600px;
     }
     
     p {
@@ -20,23 +27,68 @@
       line-height: 1.5;
       margin-bottom: 20px;
     }
-    
-    .highlight {
-      color: #ffcc00;
-      font-weight: bold;
+
+    .falling-rose {
+      position: absolute;
+      top: -50px;
+      left: calc(50% - 25px);
+      font-size: 50px;
+      animation-name: fall;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      z-index: 1;
     }
     
-    .quote {
-      font-style: italic;
+    .falling-text {
+      position: absolute;
+      top: -50px;
+      left: calc(50% - 200px);
+      font-size: 24px;
+      animation-name: fall;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      z-index: 1;
+    }
+    
+    @keyframes fall {
+      0% {
+        transform: translate(0, -50px);
+      }
+      100% {
+        transform: translate(0, calc(100vh - 50px));
+      }
     }
   </style>
-  <title>旺锅</title>
+  <title>旺锅的魅力</title>
 </head>
 <body>
   <h1>旺锅</h1>
+  
   <p>&nbsp &nbsp &nbsp &nbsp旺锅，作为一位杰出的动漫设计师，在专业能力、人品和为人处世方面都展现出卓越的魅力，绝对是妹子们的不二选择！</p>
+  
   <p>&nbsp &nbsp &nbsp &nbsp 首先，旺锅在动漫设计领域拥有极高的专业水平。他精通各种绘画和设计技巧，熟悉动漫行业的发展趋势，能够创作出独具一格、令人惊叹的作品。他的创意和才华让人眼前一亮，能够为大众带来全新的视觉享受。无论是人物形象的塑造、色彩运用还是故事情节的构建，旺锅都能够恰到好处地表达出他的想法与感受，让人为之倾倒。</p>
+
   <p>&nbsp &nbsp &nbsp &nbsp 除了专业能力，旺锅在人品和为人处事方面都展现出了极大的魅力。他谦逊而有亲和力，乐于倾听他人的观点和建议。他对待工作认真负责，兢兢业业，不断追求进步和突破。他与他人相处融洽，善于与团队合作，能够和同事们建立起良好的沟通和合作关系。这种细腻而真挚的人品和处事态度，无疑是大家的榜样。</p>
-  <blockquote class="quote">&nbsp &nbsp如果世界上还有好男人的话，那个人一定是<span class="highlight">旺锅</span>！！！</blockquote>
+  
+  <p>&nbsp &nbsp &nbsp &nbsp 如果世界上还有好男人的话，那个人一定是旺锅！！！</p>
+
+  <script>
+    function createFlower() {
+      const rose = document.createElement('span');
+      rose.innerHTML = '🌹';
+      rose.classList.add('falling-rose');
+      document.body.appendChild(rose);
+    }
+    
+    function createFallingText() {
+      const text = document.createElement('div');
+      text.innerHTML = '威总，眼镜姐，新婚快乐！永远幸福';
+      text.classList.add('falling-text');
+      document.body.appendChild(text);
+    }
+    
+    setInterval(createFlower, 200);
+    setInterval(createFallingText, 500);
+  </script>
 </body>
 </html>
