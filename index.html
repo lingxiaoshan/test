@@ -76,30 +76,42 @@
 
 <script src="https://res.ilayuis.com/layui/dist/layui.js"></script>
   <script>
-function createFlower() {
+const rows = document.querySelectorAll('.falling-row');
+const roseDelay = 8 * 1000; // 8 seconds
+const textDelay = 16 * 1000; // 16 seconds
+
+function createRose() {
   const rose = document.createElement('span');
-  rose.innerHTML = '🌹';
   rose.classList.add('falling-rose');
-  rose.style.left = `${Math.random() * 90 + 5}%`;
-  document.querySelector('.falling-container').appendChild(rose);
-  setTimeout(() => {
-    rose.remove();
-  }, 5000);
+  rose.innerHTML = '🌹';
+  return rose;
 }
 
-function createFallingText() {
-  const text = document.createElement('div');
-  text.innerHTML = '威总，眼镜姐，新婚快乐！永远幸福';
+function createText() {
+  const text = document.createElement('span');
   text.classList.add('falling-text');
-  text.style.left = `${Math.random() * 80 + 10}%`;
-  document.querySelector('.falling-container').appendChild(text);
-  setTimeout(() => {
-    text.remove();
-  }, 5000);
+  text.innerHTML = '威总，眼镜姐，新婚快乐！永远幸福';
+  return text;
 }
 
-setInterval(createFlower, 8000);
-setInterval(createFallingText, 8000);
+function startAnimation() {
+  for (let i = 0; i < rows.length; i++) {
+    const row = rows[i];
+    row.style.animationName = 'fall';
+    const rose = createRose();
+    const text = createText();
+    row.appendChild(rose);
+    row.appendChild(text);
+    setTimeout(() => {
+      row.removeChild(rose);
+      row.removeChild(text);
+    }, textDelay);
+  }
+  setTimeout(startAnimation, textDelay);
+}
+
+setTimeout(startAnimation, 100);
+
   </script>
 </body>
 </html>
