@@ -81,7 +81,7 @@ function createFlower() {
   rose.innerHTML = '🌹';
   rose.classList.add('falling-rose');
   rose.style.left = `${Math.random() * 90 + 5}%`;
-  document.body.appendChild(rose);
+  document.querySelector('.falling-container').appendChild(rose);
   setTimeout(() => {
     rose.remove();
   }, 5000);
@@ -92,11 +92,17 @@ function createFallingText() {
   text.innerHTML = '威总，眼镜姐，新婚快乐！永远幸福';
   text.classList.add('falling-text');
   text.style.left = `${Math.random() * 80 + 10}%`;
-  document.body.appendChild(text);
+  document.querySelector('.falling-container').appendChild(text);
   setTimeout(() => {
     text.remove();
   }, 5000);
 }
+
+setInterval(createFlower, 8000);
+setInterval(createFallingText, 8000);
+
+setInterval(createFlower, 8000);
+setInterval(createFallingText, 8000);
 
 setInterval(createFlower, 8000);
 setInterval(createFallingText, 8000);
