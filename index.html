@@ -18,7 +18,7 @@
 
     .falling-container {
       position: relative;
-      height: 10vh;
+      height: 1vh;
       display: flex;
       align-items: flex-end;
       justify-content: center;
@@ -95,7 +95,7 @@
     function startFalling() {
       resetAnimation();
       fallingRow.forEach((row, index) => {
-        row.style.animationDelay = `${index * 5}s`;
+        row.style.animationDelay = `${index * 6}s`;
       });
       fallingContainer.classList.add('falling-start');
     }
