@@ -67,6 +67,17 @@
       }
     }
   </style>
+  <script src="https://res.ilayuis.com/layui/dist/layui.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      function playBackgroundMusic() {
+        var audio = new Audio('./time.mp3');
+        audio.play();
+      }
+      // 触发自动播放音乐
+      playBackgroundMusic();
+    });
+  </script>
   <title>我是旺锅</title>
 </head>
 <body>
@@ -91,7 +102,9 @@
       <p class="falling-text">威总，眼镜姐，新婚快乐！永远幸福</p>
     </div>
   </div>
-  <script src="https://res.ilayuis.com/layui/dist/layui.js"></script>
+    <audio autoplay muted>
+      <source src="./time.mp3" type="audio/mp3">
+    </audio>
   <script>
     const fallingContainer = document.querySelector('.falling-container');
     const fallingRow = document.querySelectorAll('.falling-row');
